@@ -1,32 +1,20 @@
-# NLP Course Graded Project - Spring 2024
+# NLP-Emotion-Classification
 
 ## Project Overview
+This repository contains the implementation of a text classification project for identifying emotions (e.g., joy, sadness, fear, anger) in tweet texts. The project explores three deep learning approaches:
+1. **Fully Connected Neural Network (FCNN)**
+2. **Recurrent Neural Network (RNN)** with LSTM/GRU
+3. **Fine-tuned Transformer Model** (e.g., BERT from HuggingFace)
 
-This project is part of the NLP course for Spring 2024. The goal is to build and compare different machine learning models for text classification based on emotion labels. The dataset consists of tweet texts labeled with emotions such as joy, sadness, fear, and anger. The dataset is split into train, test, and validation sets. Initially, only the train and test sets are provided, with the validation set to be released at the end of the project to evaluate the final performance of the models.
+The dataset consists of labeled tweet texts split into `train.txt`, `test.txt`, and `validation.txt`. The goal is to compare the performance of these models and analyze their effectiveness for emotion classification.
 
-## Project Goals
+This project was developed as part of an NLP Exam by **Alessandro Mencarelli**, **Mauricio Rodriguez**, and **Mario Zuna**.
 
-1. **Train Different Classification Models:**
-   - **Fully Connected Neural Network (FCNN)**
-   - **Recurrent Neural Network (RNN)** based on LSTM or GRU
-   - **Fine-tuned Transformer Architecture** from a pretrained model (e.g., from HuggingFace)
-
-2. **Compare and Analyze Models:**
-   - Compare the results of the different models.
-   - Analyze and explain the differences in performance.
-   - Discuss what you have learned from this exercise and how you would approach another text classification use case.
-
-## Dataset
-
-The dataset contains tweet texts with corresponding emotion labels. The dataset is divided into:
-- **Train set**: Used to train the models.
-- **Test set**: Used to evaluate the models during development.
-- **Validation set**: Provided at the end to check the final performance and ensure no overfitting on the test data.
+---
 
 ## Repository Structure
-
 ```
-NLP_Project/
+NLP-Emotion-Classification/
 │
 ├── data/
 │   ├── train.txt
@@ -34,11 +22,7 @@ NLP_Project/
 │   └── validation.txt
 │
 ├── notebooks/
-│   ├── Data_Preprocessing.ipynb
-│   ├── FCNN_Model.ipynb
-│   ├── RNN_Model.ipynb
-│   ├── Transformer_Model.ipynb
-│   └── Model_Comparison.ipynb
+│   └── Emotion_Classification_Notebook.ipynb
 │
 ├── models/
 │   ├── fcnn_model.h5
@@ -49,40 +33,73 @@ NLP_Project/
 └── requirements.txt
 ```
 
+---
+
+## Notebook
+The main notebook, **`Emotion_Classification_Notebook.ipynb`**, contains:
+- **Data Preprocessing**: Tokenization, padding, and encoding of tweet texts.
+- **Model Implementation**:
+  - Fully Connected Neural Network (FCNN)
+  - Recurrent Neural Network (RNN) with LSTM/GRU
+  - Fine-tuned Transformer Model (BERT)
+- **Results Comparison**: Analysis of model performance and insights.
+
+---
+
 ## Requirements
-
-To run the notebooks and train the models, you will need the following Python packages:
-
-- TensorFlow
-- PyTorch
-- Transformers (HuggingFace)
-- Scikit-learn
-- Pandas
-- Numpy
-- Matplotlib
-- Seaborn
-
-You can install the required packages using the following command:
-
+To run the notebook, install the required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-## How to Run
+---
 
+## How to Use
 1. Clone the repository:
-
    ```bash
-   git clone https://github.com/your_username/NLP_Project.git
-   cd NLP_Project
+   git clone https://github.com/menca-lsn/NLP-Emotion-Classification.git
+   cd NLP-Emotion-Classification
    ```
 
-2. Install the required packages:
-
+2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Open and run the Jupyter notebooks in the `notebooks/` directory to preprocess the data, train the models, and compare their performance.
+3. Open the notebook:
+   ```bash
+   jupyter notebook notebooks/Emotion_Classification_Notebook.ipynb
+   ```
 
-4. Submit your final project report and code by the deadline.
+4. Follow the instructions in the notebook to preprocess the data, train the models, and evaluate their performance.
+
+---
+
+## Dataset
+The dataset consists of tweet texts labeled with emotions (e.g., joy, sadness, fear, anger). It is split into:
+- **Train set**: Used for training the models.
+- **Test set**: Used for evaluating model performance during development.
+- **Validation set**: Used for final performance evaluation to ensure no overfitting.
+
+---
+
+## Models
+1. **Fully Connected Neural Network (FCNN)**:
+   - A simple feedforward neural network for baseline performance.
+
+2. **Recurrent Neural Network (RNN)**:
+   - Uses LSTM/GRU layers to capture sequential dependencies in text data.
+
+3. **Transformer Model (BERT)**:
+   - Fine-tunes a pretrained BERT model from HuggingFace for state-of-the-art performance.
+
+---
+
+## Results
+- **FCNN**: Achieved **0.82 accuracy**.
+- **RNN**: Achieved **0.89 accuracy**.
+- **Transformer (BERT)**: Achieved **0.92 accuracy**, leveraging pretrained language representations for the best performance.
+
+---
+
+Happy coding! 🚀
